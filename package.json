@@ -2,11 +2,24 @@
   "name": "@gcamach0/ledger-clone",
   "version": "1.0.0",
   "description": "A simple implementation of the ledger-cli",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": {
+    "@gcamach0/create-project": "bin/create-project",
+    "create-project": "bin/create-project"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["accounting", "cli", "node"],
+  "keywords": [
+    "accounting",
+    "cli",
+    "node"
+  ],
   "author": "Gerardo Camacho",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^5.0.1",
+    "esm": "^3.2.25",
+    "inquirer": "^8.2.4"
+  }
 }
