@@ -4,7 +4,7 @@ import path from "path";
 export function readJournalFile(location) {
   try {
     const rawData = fs.readFileSync(location, "utf-8");
-
+    
     let linesOfContent = rawData.split("\n");
 
     if (linesOfContent[0].startsWith("!include")) {
@@ -15,8 +15,8 @@ export function readJournalFile(location) {
   } catch (error) {
     throw new Error(error.message);
   }
-
 }
+
 export function readIndexFile(index, indexLocation) {
   const linesOfContent = [];
   index.forEach((line) => {

@@ -4,8 +4,8 @@
   "description": "A simple implementation of the ledger-cli",
   "main": "src/index.js",
   "bin": {
-    "@gcamach0/create-project": "bin/create-project",
-    "create-project": "bin/create-project"
+    "@gcamach0/ledger-cli": "bin/ledger-cli",
+    "ledger-cli": "bin/ledger-cli"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

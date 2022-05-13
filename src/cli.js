@@ -1,4 +1,4 @@
-import { parseArgumentsIntoOptions } from "./arguments";
+import { parseArgumentsIntoOptions, sortData } from "./arguments";
 import { callAction } from "./arguments";
 import { validateOptions } from "./arguments";
 import { readJournalFile } from "./fileReader";
@@ -8,7 +8,8 @@ export async function cli(args) {
   let options = parseArgumentsIntoOptions(args);
   if (!validateOptions(options)) return;
   const data = readJournalFile(options["--file"]);
-  console.log('data :>> ', data);
-  parseRawContent(data);
-  callAction(options);
+  let parsedData = parseRawContent(data);
+  console.log(parsedData);
+  if (options["--sort"]) parsedData = sortData(parsedData);
+  callAction(options, parsedData);
 }

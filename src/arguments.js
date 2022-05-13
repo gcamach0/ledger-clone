@@ -5,6 +5,7 @@ export function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
       "--file": String,
+      "--sort": Boolean,
     },
     {
       argv: rawArgs.slice(2),
@@ -13,11 +14,11 @@ export function parseArgumentsIntoOptions(rawArgs) {
   return args;
 }
 
-export function callAction(options) {
+export function callAction(options, data) {
   const argument = options._[0];
-  
+
   if (argument === "register") {
-    registerAction();
+    registerAction(data);
     return;
   }
 
@@ -27,13 +28,19 @@ export function callAction(options) {
   }
 }
 
+export function sortData(unsortedData) {
+// sort data by date
+}
+
 export function validateOptions(options) {
   if (!options._[0]) {
     console.log("Please select the action you want to perform");
     return false;
   }
   if (!options["--file"]) {
-    console.log("Please provide the path of the file from which the report will be generated");
+    console.log(
+      "Please provide the path of the file from which the report will be generated"
+    );
     return false;
   }
   return true;
