@@ -2,6 +2,7 @@
 A simple implementation of the ledger-cli
 
 Instructions:
+
 ##1.- Clone the repository into your computer
 
 ##2.- Move inside the project folder and run the command "npm link"
